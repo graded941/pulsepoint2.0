@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // User profile
+    match /users/{userId} {
+      allow read: if true; // public leaderboard reads
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update, delete: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Study sessions nested under a user
+    match /users/{userId}/sessions/{sessionId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update, delete: if false; // immutable once written
+    }
+
+    // Private rooms
+    match /rooms/{roomId} {
+      allow read: if isSignedIn(); // allow members to see meta, client filters by membership
+      allow create: if isSignedIn();
+      allow update: if isSignedIn(); // creator or members may rename/icon; tighten if needed
+      allow delete: if false;
+    }
+    match /rooms/{roomId}/members/{memberId} {
+      allow read: if isSignedIn() && request.auth.uid == memberId;
+      allow create: if isSignedIn() && request.auth.uid == memberId;
+      allow delete: if isSignedIn() && request.auth.uid == memberId;
+      allow update: if false;
+    }
+  }
+}
+
+
