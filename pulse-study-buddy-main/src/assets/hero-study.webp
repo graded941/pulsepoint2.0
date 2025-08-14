@@ -1,0 +1,4 @@
+# This is a placeholder for the WebP version of hero-study.jpg
+# The actual WebP file should be created by converting the JPG using:
+# cwebp hero-study.jpg -o hero-study.webp -q 80
+

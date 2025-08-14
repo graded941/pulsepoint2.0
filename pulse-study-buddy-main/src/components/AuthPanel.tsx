@@ -91,18 +91,40 @@ const AuthPanel = () => {
         </div>
       ) : (
         <div className="space-y-3">
-          <input className={inputBase} type="email" placeholder="you@example.com" value={email} onChange={(e)=>setEmail(e.target.value)} />
-          <input className={inputBase} type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+          <div>
+            <label className="sr-only" htmlFor="auth-email">Email</label>
+            <input 
+              id="auth-email"
+              className={inputBase} 
+              type="email" 
+              autoComplete="email"
+              placeholder="you@example.com" 
+              value={email} 
+              onChange={(e)=>setEmail(e.target.value)} 
+            />
+          </div>
+          <div>
+            <label className="sr-only" htmlFor="auth-password">Password</label>
+            <input 
+              id="auth-password"
+              className={inputBase} 
+              type="password" 
+              autoComplete="current-password"
+              placeholder="Password" 
+              value={password} 
+              onChange={(e)=>setPassword(e.target.value)} 
+            />
+          </div>
           <div className="flex gap-2 flex-wrap">
-            <button className={btn} onClick={doSignIn} disabled={loading}>Sign in</button>
-            <button className={btn} onClick={doRegister} disabled={loading}>Create account</button>
-            <button className={btn} onClick={doReset} disabled={loading}>Reset password</button>
-            <button className={btn} onClick={doGoogle} disabled={loading}>Google</button>
+            <button type="button" className={btn} onClick={doSignIn} disabled={loading} aria-label="Sign in">Sign in</button>
+            <button type="button" className={btn} onClick={doRegister} disabled={loading} aria-label="Create account">Create account</button>
+            <button type="button" className={btn} onClick={doReset} disabled={loading} aria-label="Reset password">Reset password</button>
+            <button type="button" className={btn} onClick={doGoogle} disabled={loading} aria-label="Sign in with Google">Google</button>
           </div>
         </div>
       )}
 
-      {message && <div className="mt-3 text-sm">{message}</div>}
+      {message && <div className="mt-3 text-sm" role="status" aria-live="polite">{message}</div>}
     </div>
   );
 };

@@ -1,0 +1,17 @@
+{
+  "name": "PointPulse - AI Study Companion",
+  "short_name": "PointPulse",
+  "description": "Track study sessions, earn XP, and stay motivated with gamified learning",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0072A4",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
+

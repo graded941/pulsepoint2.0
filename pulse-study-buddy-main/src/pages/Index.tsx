@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Users, Trophy, Brain, BookOpen, Rocket, MessageSquare, Clock, Star, Target, Calendar, TrendingUp, X, Settings, Minus, Plus, Accessibility, Eye, Zap, Palette, MousePointer, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-study.jpg";
+import heroJpg from "@/assets/hero-study.jpg";
+import heroWebp from "@/assets/hero-study.webp";
 import UserMenu from "@/components/UserMenu";
 import { FormEvent, useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -392,7 +393,17 @@ const Index = () => {
           aria-labelledby="hero-heading"
           className="relative"
         >
-          <div className="relative w-full" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+          <div className="relative w-full">
+            <picture>
+              <source srcSet={heroWebp} type="image/webp" />
+              <img 
+                src={heroJpg} 
+                alt="Students studying together" 
+                className="w-full h-full object-cover absolute inset-0"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/85 to-accent/80" />
             <div className="relative container text-primary-foreground py-24 sm:py-32">
               <h1 id="hero-heading" className="max-w-3xl text-4xl sm:text-5xl font-bold leading-tight">

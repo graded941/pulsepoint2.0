@@ -1,38 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PointPulse | Study Accountability for Med & Pharm Students</title>
-    <meta name="description" content="Stay focused. Earn points. Study with peers. PointPulse helps medical and pharmacy students build accountability, beat isolation, and crush their exams." />
-    <meta name="theme-color" content="#1E3A8A" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="canonical" href="/" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PointPulse - Your AI-powered study companion. Track sessions, earn XP, and stay motivated with gamified learning." />
+    <meta name="keywords" content="study, productivity, AI, learning, focus, timer, gamification" />
     <meta name="author" content="PointPulse" />
-
-    <meta property="og:title" content="PointPulse | Study Accountability for Med & Pharm Students" />
-    <meta property="og:description" content="Stay focused. Earn points. Study with peers. PointPulse helps medical and pharmacy students build accountability, beat isolation, and crush their exams." />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <script type="application/ld+json">{
+    <meta property="og:url" content="https://pointpulse.app/" />
+    <meta property="og:title" content="PointPulse - AI Study Companion" />
+    <meta property="og:description" content="Track study sessions, earn XP, and stay motivated with gamified learning." />
+    <meta property="og:image" content="https://pointpulse.app/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pointpulse.app/" />
+    <meta property="twitter:title" content="PointPulse - AI Study Companion" />
+    <meta property="twitter:description" content="Track study sessions, earn XP, and stay motivated with gamified learning." />
+    <meta property="twitter:image" content="https://pointpulse.app/og-image.jpg" />
+    
+    <!-- Canonical and color scheme -->
+    <link rel="canonical" href="https://pointpulse.app/" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="/src/assets/hero-study.webp" imagesrcset="/src/assets/hero-study.webp" imagesizes="100vw" />
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "WebApplication",
       "name": "PointPulse",
+      "description": "AI-powered study companion with gamified learning",
+      "url": "https://pointpulse.app",
       "applicationCategory": "EducationalApplication",
-      "operatingSystem": "Web",
-      "description": "Stay focused. Earn points. Study with peers. PointPulse helps medical and pharmacy students build accountability, beat isolation, and crush their exams.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    }</script>
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <title>PointPulse - AI Study Companion</title>
   </head>
   <body>
+    <a href="#root" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-primary text-primary-foreground px-3 py-2 rounded-md">Skip to content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <noscript><div style="padding:1rem;text-align:center">PointPulse requires JavaScript to run.</div></noscript>
   </body>
 </html>
